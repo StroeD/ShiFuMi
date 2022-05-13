@@ -116,3 +116,13 @@ body{
     top:20px;
     left:30px;
 }
+
+#finalResult{
+    width: 500px;
+    height: 100px;
+    position:absolute;
+    left:600px;
+    bottom:200px;
+    font-size:50px;
+    text-align:center;
+}

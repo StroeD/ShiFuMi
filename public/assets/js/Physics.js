@@ -22,7 +22,7 @@ document.getElementById('bodeh').addEventListener('click',function(){
     clickCounter = 1
 
 })
-
+BGM.loop=true;
 document.addEventListener('keypress', function(e){
     
     if((e.code  == 'Space' && document.getElementById('character').classList !='animate') || (e.key  == 'z' && document.getElementById('character').classList !='animate')) {
@@ -52,23 +52,31 @@ document.addEventListener('keypress', function(e){
             
             i=0;
             j=0;
+            document.getElementById('finalResult').innerHTML = "It's a tie!"
+            setTimeout(function(){
+                document.getElementById('finalResult').innerHTML = ''
+            },3000)
         }else if(i == 10){
             
             i=0;
             j=0;
+            document.getElementById('finalResult').innerHTML = "It's a win!"
             document.getElementById('charaImg').src='public/assets/img/blobwin.png'
             winSound.play();
             BGM.load();
             setTimeout(function(){
+                document.getElementById('finalResult').innerHTML = ''
             BGM.play();},6000);
         }else if(j == 10){
             
             i=0;
             j=0;
+            document.getElementById('finalResult').innerHTML = "It's a loss!"
             document.getElementById('charaImg').src='public/assets/img/madmanblob.png'
             loseSound.play()
             BGM.load();
             setTimeout(function(){
+                document.getElementById('finalResult').innerHTML = ''
                 BGM.play();},3000);
         }
         switch (results[0]){
@@ -106,24 +114,33 @@ document.addEventListener('keypress', function(e){
             
             i=0;
             j=0;
+            document.getElementById('finalResult').innerHTML = "It's a tie!"
+            setTimeout(function(){
+                document.getElementById('finalResult').innerHTML = ''
+            },300)
         }else if(i == 10){
             
             i=0;
             j=0;
+            document.getElementById('finalResult').innerHTML = "It's a win!"
             document.getElementById('charaImg').src='public/assets/img/blobwin.png'
             winSound.play();
             BGM.load();
             setTimeout(function(){
-            BGM.play();},6000);
+            BGM.play();
+            document.getElementById('finalResult').innerHTML = ''
+            },6000);
         }else if(j == 10){
             
             i=0;
             j=0;
+            document.getElementById('finalResult').innerHTML = "It's a loss!"
             document.getElementById('charaImg').src='public/assets/img/madmanblob.png'
             loseSound.play()
             BGM.load();
             setTimeout(function(){
-                BGM.play();},3000);
+                BGM.play();
+                document.getElementById('finalResult').innerHTML = '';},3000);
         }
         switch (results[0]){
             case 0:
@@ -160,24 +177,32 @@ document.addEventListener('keypress', function(e){
             ;
             i=0;
             j=0;
+            document.getElementById('finalResult').innerHTML = "It's a tie!"
+            setTimeout(function(){
+                document.getElementById('finalResult').innerHTML = ''
+            },300)
         }else if(i == 10){
             
             i=0;
             j=0;
+            document.getElementById('finalResult').innerHTML = "It's a win!"
             document.getElementById('charaImg').src='public/assets/img/blobwin.png'
             winSound.play();
             BGM.load();
             setTimeout(function(){
-            BGM.play();},6000);
+            BGM.play();
+            document.getElementById('finalResult').innerHTML = '';},6000);
         }else if(j == 10){
             
             i=0;
             j=0;
+            document.getElementById('finalResult').innerHTML = "It's a loss!"
             document.getElementById('charaImg').src='public/assets/img/madmanblob.png'
             loseSound.play()
             BGM.load();
             setTimeout(function(){
-                BGM.play();},3000);
+                BGM.play();
+                document.getElementById('finalResult').innerHTML = ''},3000);
         }
         switch (results[0]){
             case 0:
@@ -239,4 +264,3 @@ document.addEventListener('keypress', function(e){
         left();
     }
 })
-

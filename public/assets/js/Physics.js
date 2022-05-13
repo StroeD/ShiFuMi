@@ -11,6 +11,8 @@ let movR = 0;
 let movL = 0;
 let jumpSound = new Audio('public/assets/sound/smw_jump.wav')
 let bumpSound = new Audio('public/assets/sound/smb_bump.wav')
+let loseSound = new Audio('public/assets/sound/smb_mariodie.wav')
+let winSound = new Audio('public/assets/sound/smb_stage_clear.wav')
 
 document.addEventListener('keypress', function(e){
     
@@ -45,11 +47,14 @@ document.addEventListener('keypress', function(e){
             alert('Win!')
             i=0;
             j=0;
+            document.getElementById('charaImg').src='public/assets/img/blobwin.png'
+            winSound.play();
         }else if(j == 10){
             alert('| ||\n|i | _')
             i=0;
             j=0;
             document.getElementById('charaImg').src='public/assets/img/madmanblob.png'
+            loseSound.play()
         }
         switch (results[0]){
             case 0:
@@ -90,11 +95,14 @@ document.addEventListener('keypress', function(e){
             alert('Win!')
             i=0;
             j=0;
+            document.getElementById('charaImg').src='public/assets/img/blobwin.png'
+            winSound.play();
         }else if(j == 10){
             alert('| ||\n|i | _')
             i=0;
             j=0;
             document.getElementById('charaImg').src='public/assets/img/madmanblob.png'
+            loseSound.play()
         }
         switch (results[0]){
             case 0:
@@ -135,11 +143,14 @@ document.addEventListener('keypress', function(e){
             alert('Win!')
             i=0;
             j=0;
+            document.getElementById('charaImg').src='public/assets/img/blobwin.png'
+            winSound.play();
         }else if(j == 10){
             alert('| ||\n|i | _')
             i=0;
             j=0;
             document.getElementById('charaImg').src='public/assets/img/madmanblob.png'
+            loseSound.play()
         }
         switch (results[0]){
             case 0:

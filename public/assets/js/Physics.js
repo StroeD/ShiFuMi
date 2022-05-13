@@ -122,6 +122,7 @@ document.addEventListener('keypress', function(e){
             i++
         }
         if (results[0] != 1){
+            
             j++
         }
         if (i == 10 && j ==10){

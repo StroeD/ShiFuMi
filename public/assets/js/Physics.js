@@ -14,7 +14,9 @@ let jumpSound = new Audio('public/assets/sound/smw_jump.wav');
 let bumpSound = new Audio('public/assets/sound/smb_bump.wav');
 let loseSound = new Audio('public/assets/sound/smb_mariodie.wav');
 let winSound = new Audio('public/assets/sound/smb_stage_clear.wav');
+let thierrySound = new Audio('public/assets/sound/smb_powerup.wav');
 let BGM = new Audio('public/assets/sound/smbbgm.mp3');
+let thierry=0
 
 document.getElementById('bodeh').addEventListener('click',function(){
     if(clickCounter == 0){
@@ -53,6 +55,8 @@ document.addEventListener('keypress', function(e){
             i=0;
             j=0;
             document.getElementById('finalResult').innerHTML = "It's a tie!"
+            document.getElementById('charaImg').src='public/assets/img/Blob.png'
+            thierry=0
             setTimeout(function(){
                 document.getElementById('finalResult').innerHTML = ''
             },3000)
@@ -62,6 +66,7 @@ document.addEventListener('keypress', function(e){
             j=0;
             document.getElementById('finalResult').innerHTML = "It's a win!"
             document.getElementById('charaImg').src='public/assets/img/blobwin.png'
+            thierry=0
             winSound.play();
             BGM.load();
             setTimeout(function(){
@@ -73,6 +78,7 @@ document.addEventListener('keypress', function(e){
             j=0;
             document.getElementById('finalResult').innerHTML = "It's a loss!"
             document.getElementById('charaImg').src='public/assets/img/madmanblob.png'
+            thierry=0
             loseSound.play()
             BGM.load();
             setTimeout(function(){
@@ -115,6 +121,8 @@ document.addEventListener('keypress', function(e){
             i=0;
             j=0;
             document.getElementById('finalResult').innerHTML = "It's a tie!"
+            document.getElementById('charaImg').src='public/assets/img/Blob.png'
+            thierry=0
             setTimeout(function(){
                 document.getElementById('finalResult').innerHTML = ''
             },300)
@@ -124,6 +132,7 @@ document.addEventListener('keypress', function(e){
             j=0;
             document.getElementById('finalResult').innerHTML = "It's a win!"
             document.getElementById('charaImg').src='public/assets/img/blobwin.png'
+            thierry=0
             winSound.play();
             BGM.load();
             setTimeout(function(){
@@ -136,6 +145,7 @@ document.addEventListener('keypress', function(e){
             j=0;
             document.getElementById('finalResult').innerHTML = "It's a loss!"
             document.getElementById('charaImg').src='public/assets/img/madmanblob.png'
+            thierry=0
             loseSound.play()
             BGM.load();
             setTimeout(function(){
@@ -180,6 +190,8 @@ document.addEventListener('keypress', function(e){
             document.getElementById('finalResult').innerHTML = "It's a tie!"
             setTimeout(function(){
                 document.getElementById('finalResult').innerHTML = ''
+                document.getElementById('charaImg').src='public/assets/img/Blob.png'
+                thierry=0
             },300)
         }else if(i == 10){
             
@@ -187,6 +199,7 @@ document.addEventListener('keypress', function(e){
             j=0;
             document.getElementById('finalResult').innerHTML = "It's a win!"
             document.getElementById('charaImg').src='public/assets/img/blobwin.png'
+            thierry=0
             winSound.play();
             BGM.load();
             setTimeout(function(){
@@ -198,6 +211,7 @@ document.addEventListener('keypress', function(e){
             j=0;
             document.getElementById('finalResult').innerHTML = "It's a loss!"
             document.getElementById('charaImg').src='public/assets/img/madmanblob.png'
+            thierry=0
             loseSound.play()
             BGM.load();
             setTimeout(function(){
@@ -217,7 +231,18 @@ document.addEventListener('keypress', function(e){
         }
         document.getElementById('score').innerHTML=' Player: ' + i + '\nComputer: ' + j    
     },150)}
-
+    if (leftPos<=1097 && leftPos>=977){
+        setTimeout(function(){
+            if (thierry==0){
+            document.getElementById('charaImg').src='public/assets/img/thierry.png';
+            thierrySound.play();
+            thierry=1
+        }else if(thierry==1){
+            document.getElementById('charaImg').src='public/assets/img/madmanblob.png';
+            thierry=0
+        }
+        },150)
+    }
     document.getElementById('character').classList.add('animate');
     setTimeout(
         function(){

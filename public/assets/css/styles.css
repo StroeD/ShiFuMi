@@ -10,6 +10,7 @@ body{
     background-image: url('../img/SMBbg.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    overflow:hidden; 
 }
 #floor{
     width:100vw;

@@ -13,6 +13,8 @@ let jumpSound = new Audio('public/assets/sound/smw_jump.wav')
 let bumpSound = new Audio('public/assets/sound/smb_bump.wav')
 let loseSound = new Audio('public/assets/sound/smb_mariodie.wav')
 let winSound = new Audio('public/assets/sound/smb_stage_clear.wav')
+let BGM = new Audio('public/assets/sound/smbbgm.mp3')
+BGM.play();
 
 document.addEventListener('keypress', function(e){
     
@@ -40,21 +42,27 @@ document.addEventListener('keypress', function(e){
             j++
         }
         if (i == 10 && j ==10){
-            alert('Tie!')
+            
             i=0;
             j=0;
         }else if(i == 10){
-            alert('Win!')
+            
             i=0;
             j=0;
             document.getElementById('charaImg').src='public/assets/img/blobwin.png'
             winSound.play();
+            BGM.load();
+            setTimeout(function(){
+            BGM.play();},6000);
         }else if(j == 10){
-            alert('| ||\n|i | _')
+            
             i=0;
             j=0;
             document.getElementById('charaImg').src='public/assets/img/madmanblob.png'
             loseSound.play()
+            BGM.load();
+            setTimeout(function(){
+                BGM.play();},3000);
         }
         switch (results[0]){
             case 0:
@@ -88,21 +96,27 @@ document.addEventListener('keypress', function(e){
             j++
         }
         if (i == 10 && j ==10){
-            alert('Tie!')
+            
             i=0;
             j=0;
         }else if(i == 10){
-            alert('Win!')
+            
             i=0;
             j=0;
             document.getElementById('charaImg').src='public/assets/img/blobwin.png'
             winSound.play();
+            BGM.load();
+            setTimeout(function(){
+            BGM.play();},6000);
         }else if(j == 10){
-            alert('| ||\n|i | _')
+            
             i=0;
             j=0;
             document.getElementById('charaImg').src='public/assets/img/madmanblob.png'
             loseSound.play()
+            BGM.load();
+            setTimeout(function(){
+                BGM.play();},3000);
         }
         switch (results[0]){
             case 0:
@@ -136,21 +150,27 @@ document.addEventListener('keypress', function(e){
             j++
         }
         if (i == 10 && j ==10){
-            alert('Tie!');
+            ;
             i=0;
             j=0;
         }else if(i == 10){
-            alert('Win!')
+            
             i=0;
             j=0;
             document.getElementById('charaImg').src='public/assets/img/blobwin.png'
             winSound.play();
+            BGM.load();
+            setTimeout(function(){
+            BGM.play();},6000);
         }else if(j == 10){
-            alert('| ||\n|i | _')
+            
             i=0;
             j=0;
             document.getElementById('charaImg').src='public/assets/img/madmanblob.png'
             loseSound.play()
+            BGM.load();
+            setTimeout(function(){
+                BGM.play();},3000);
         }
         switch (results[0]){
             case 0:

@@ -14,7 +14,7 @@ body{
 }
 #rule{
     position:fixed;
-    right:200px;
+    right:0px;
 }
 #floor{
     width:100vw;

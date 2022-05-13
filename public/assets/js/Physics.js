@@ -9,16 +9,23 @@ let dx = 30;
 let maxHeightVal =  parseInt(window.getComputedStyle(character).getPropertyValue("bottom"))
 let movR = 0;
 let movL = 0;
-let jumpSound = new Audio('public/assets/sound/smw_jump.wav')
-let bumpSound = new Audio('public/assets/sound/smb_bump.wav')
-let loseSound = new Audio('public/assets/sound/smb_mariodie.wav')
-let winSound = new Audio('public/assets/sound/smb_stage_clear.wav')
-let BGM = new Audio('public/assets/sound/smbbgm.mp3')
-BGM.play();
+let clickCounter=0;
+let jumpSound = new Audio('public/assets/sound/smw_jump.wav');
+let bumpSound = new Audio('public/assets/sound/smb_bump.wav');
+let loseSound = new Audio('public/assets/sound/smb_mariodie.wav');
+let winSound = new Audio('public/assets/sound/smb_stage_clear.wav');
+let BGM = new Audio('public/assets/sound/smbbgm.mp3');
+
+document.getElementById('bodeh').addEventListener('click',function(){
+    if(clickCounter == 0){
+    BGM.play();}
+    clickCounter = 1
+
+})
 
 document.addEventListener('keypress', function(e){
     
-    if(e.code  == 'Space' && document.getElementById('character').classList !='animate') {
+    if((e.code  == 'Space' && document.getElementById('character').classList !='animate') || (e.key  == 'z' && document.getElementById('character').classList !='animate')) {
         jumpSound.play();
         leftPos = parseInt(window.getComputedStyle(character).getPropertyValue("left"))
         if (leftPos>=350 && leftPos <= 500){

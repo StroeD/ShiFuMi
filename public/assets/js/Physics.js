@@ -49,6 +49,7 @@ document.addEventListener('keypress', function(e){
             alert('| ||\n|i | _')
             i=0;
             j=0;
+            document.getElementById('charaImg').src='public/assets/img/madmanblob.png'
         }
         switch (results[0]){
             case 0:
@@ -93,6 +94,7 @@ document.addEventListener('keypress', function(e){
             alert('| ||\n|i | _')
             i=0;
             j=0;
+            document.getElementById('charaImg').src='public/assets/img/madmanblob.png'
         }
         switch (results[0]){
             case 0:
@@ -122,7 +124,7 @@ document.addEventListener('keypress', function(e){
             i++
         }
         if (results[0] != 1){
-            
+
             j++
         }
         if (i == 10 && j ==10){
@@ -137,6 +139,7 @@ document.addEventListener('keypress', function(e){
             alert('| ||\n|i | _')
             i=0;
             j=0;
+            document.getElementById('charaImg').src='public/assets/img/madmanblob.png'
         }
         switch (results[0]){
             case 0:
